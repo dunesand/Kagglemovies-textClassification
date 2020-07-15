@@ -1,2 +1,3 @@
-# Kagglemovies-text-classification-based-on-word-of-bag-model
-kagglemovies基于词袋模型的文本分类
+# Kagglemovies-textClassification
+kagglemovies基于词袋模型及神经网络的文本分类
+分别通过ngram和softmax函数的传统统计方法，及biLSTM和CNN两种深度学习方法对kaggle项目Sentiment Analysis on Movie Reviews数据集进行文本分类.
