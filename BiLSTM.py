@@ -112,15 +112,6 @@ train_set = Data.TensorDataset(trainFeature,trainLabel)
 train_iter = Data.DataLoader(train_set, batch_size, shuffle=True)
 #test_iter = Data.DataLoader(test_set, batch_size)
 
-#由于PyTorch没有自带全局的最大池化层，所以类似5.8节我们可以通过普通的池化来实现全局池化。
-class GlobalMaxPool1d(nn.Module):
-    def __init__(self):
-        super(GlobalMaxPool1d, self).__init__()
-    def forward(self, x):
-         # x shape: (batch_size, channel, seq_len)
-         # return shape: (batch_size, channel, 1)
-        return F.max_pool1d(x, kernel_size=x.shape[2])
-
 class BiRNN(nn.Module):
     def __init__(self, vocab, embed_size, num_hiddens, num_layers):
         super(BiRNN, self).__init__()
